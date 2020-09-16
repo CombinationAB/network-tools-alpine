@@ -1,7 +1,7 @@
 ARG ALPINE_VERSION=3.11
 
 FROM alpine:${ALPINE_VERSION}
-RUN apk add --no-cache bind-tools curl openssh-client openssh-server nmap tcptraceroute iputils iperf3 bash python3
+RUN apk add --no-cache bind-tools curl openssh-client openssh-server nmap tcptraceroute iputils iperf3 bash python3 netcat-openbsd
 RUN apk add --virtual=build gcc libffi-dev musl-dev openssl-dev py3-pip python3-dev make \
  && pip3 --no-cache-dir install azure-cli \
  && apk del --purge build
