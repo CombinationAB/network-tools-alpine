@@ -31,4 +31,4 @@ jobs:
         DOCKER_HUB_KEY: ${{ secrets.DOCKER_HUB_KEY }}
     - name: Build and push Docker image
       run: | 
-        docker buildx build --platform $platforms --push . --file Dockerfile --build-arg ALPINE_VERSION=${{ matrix.alpine_version }} --tag docker.pkg.github.com/combinationab/network-tools-alpine/network-tools-alpine:${{ matrix.alpine_version }} --tag combination/network-tools-alpine:${{ matrix.alpine_version }}
+        docker buildx build --platform $platforms --push . --file Dockerfile --build-arg ALPINE_VERSION=${{ matrix.alpine_version }} --tag ghcr.io/combinationab/network-tools-alpine/network-tools-alpine:${{ matrix.alpine_version }} --tag combination/network-tools-alpine:${{ matrix.alpine_version }}
